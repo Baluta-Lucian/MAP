@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.genericexam.controller.StudentController">
+   <children>
+      <TableView fx:id="tableViewIntrebari" layoutX="19.0" layoutY="14.0" prefHeight="200.0" prefWidth="559.0">
+        <columns>
+          <TableColumn fx:id="nrIntrebareColumn" prefWidth="37.0" text="nrIntrebare" />
+          <TableColumn fx:id="descriereColumn" prefWidth="138.0" text="descriere" />
+            <TableColumn fx:id="v1Column" prefWidth="108.0" text="v1" />
+            <TableColumn fx:id="v2Column" prefWidth="116.0" text="v2" />
+            <TableColumn fx:id="v3Column" prefWidth="108.0" text="v3" />
+            <TableColumn fx:id="punctajColumn" prefWidth="51.0" text="punctaj" />
+        </columns>
+      </TableView>
+      <RadioButton fx:id="v1RadioBtn" layoutX="102.0" layoutY="238.0" mnemonicParsing="false" text="v1" />
+      <RadioButton fx:id="v2RadioBtn" layoutX="282.0" layoutY="238.0" mnemonicParsing="false" text="v2" />
+      <RadioButton fx:id="v3RadioBtn" layoutX="476.0" layoutY="238.0" mnemonicParsing="false" text="v3" />
+      <Button fx:id="trimiteRaspunsBtn" layoutX="248.0" layoutY="271.0" mnemonicParsing="false" text="Trimite Raspuns" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.exammap.NewWindowController">
+   <children>
+      <ComboBox fx:id="myCombo1" layoutX="49.0" layoutY="57.0" prefWidth="150.0" promptText="Departure City" />
+      <ComboBox fx:id="myCombo2" layoutX="369.0" layoutY="57.0" prefWidth="150.0" promptText="Destination City" />
+      <CheckBox fx:id="myCheckBoxButton" layoutX="223.0" layoutY="61.0" mnemonicParsing="false" text="Direct Routes Only" />
+      <Button fx:id="mySearchButton" layoutX="257.0" layoutY="112.0" mnemonicParsing="false" onAction="#onButtonSearch" text="Search" />
+      <TableView fx:id="myTableView" layoutX="49.0" layoutY="165.0" prefHeight="200.0" prefWidth="521.0">
+        <columns>
+          <TableColumn fx:id="city1Column" prefWidth="109.0" text="City" />
+          <TableColumn fx:id="trainId1Column" prefWidth="121.0" text="TrainId" />
+            <TableColumn fx:id="city2Column" prefWidth="134.0" text="City" />
+            <TableColumn fx:id="trainId2Column" prefWidth="156.0" text="TrainId" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
