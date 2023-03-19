@@ -36,6 +36,15 @@ public class ServiceProfesor implements Observable<RaspunsEvent> {
         return this.raspunsuri;
     }
 
+    public List<Raspuns> getRaspunsuriByStudent(String student){
+        List<Raspuns> raspunsuriStudent = new ArrayList<Raspuns>();
+        for (Raspuns r : this.raspunsuri){
+            if (r.getNumeStud().equals(student))
+                raspunsuriStudent.add(r);
+        }
+        return raspunsuriStudent;
+    }
+
     @Override
     public void addObserver(Observer<RaspunsEvent> e) {
         observers.add(e);

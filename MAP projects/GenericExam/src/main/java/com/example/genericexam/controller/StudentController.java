@@ -1,12 +1,13 @@
 package com.example.genericexam.controller;
 
+import com.example.genericexam.domain.Final;
 import com.example.genericexam.domain.Intrebare;
 import com.example.genericexam.domain.Raspuns;
-import com.example.genericexam.service.Service;
 import com.example.genericexam.service.ServiceProfesor;
 import com.example.genericexam.service.ServiceStudent;
+import com.example.genericexam.utils.events.Event;
+import com.example.genericexam.utils.events.FinishEvent;
 import com.example.genericexam.utils.events.IntrebareEvent;
-import com.example.genericexam.utils.events.RaspunsEvent;
 import com.example.genericexam.utils.observer.Observer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,12 +16,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class StudentController implements Observer<IntrebareEvent> {
+@SuppressWarnings("rawtypes")
+public class StudentController implements Observer {
     ServiceStudent serviceStudent;
     ServiceProfesor serviceProfesor;
+
+    @FXML
+    private Label finalScoreLabel;
 
     @FXML
     private TableColumn<Intrebare, String> descriereColumn;
@@ -62,11 +66,25 @@ public class StudentController implements Observer<IntrebareEvent> {
 
 
 
-    String studentName;
+    private String studentName;
 
     Intrebare currentIntrebare;
 
-    int i = 1;
+    private final Map<Class<? extends Event>, Observer> listeners;
+
+
+    public StudentController() {
+        @SuppressWarnings("rawtypes")
+
+        Map<Class<? extends Event>, Observer> temp  = new HashMap<>();
+
+        temp.put(IntrebareEvent.class, new IntrebareObserver());
+
+        temp.put(FinishEvent.class, new FinishObserver());
+
+        listeners = Collections.unmodifiableMap(temp);
+    }
+
 
 
     public void setService(ServiceStudent serviceStudent, ServiceProfesor serviceProfesor){
@@ -75,6 +93,7 @@ public class StudentController implements Observer<IntrebareEvent> {
         this.serviceStudent.addObserver(this);
         this.trimiteRaspunsBtn.setOnAction(this::onRaspunsButtonPressed);
         InitModel();
+
     }
 
     public void InitModel(){
@@ -82,6 +101,12 @@ public class StudentController implements Observer<IntrebareEvent> {
         v1RadioBtn.setToggleGroup(group);
         v2RadioBtn.setToggleGroup(group);
         v3RadioBtn.setToggleGroup(group);
+
+        trimiteRaspunsBtn.setVisible(false);
+        v1RadioBtn.setVisible(false);
+        v2RadioBtn.setVisible(false);
+        v3RadioBtn.setVisible(false);
+        finalScoreLabel.setVisible(false);
     }
 
     public void setStudent(String studentName){
@@ -103,6 +128,10 @@ public class StudentController implements Observer<IntrebareEvent> {
 //        System.out.println(v3RadioBtn.getText());
         System.out.println(r);
         if(r.length() != 0 && aRaspuns == 0){
+            trimiteRaspunsBtn.setVisible(false);
+            v1RadioBtn.setVisible(false);
+            v2RadioBtn.setVisible(false);
+            v3RadioBtn.setVisible(false);
             aRaspuns = 1;
             Raspuns raspuns;
             if(r.equals(currentIntrebare.getRaspunsCorect())) {
@@ -129,22 +158,150 @@ public class StudentController implements Observer<IntrebareEvent> {
         tableViewIntrebari.setItems(intrebariList);
     }
 
+//    @Override
+//    public void update(IntrebareEvent intrebareEvent) {
+//        if(!intrebariList.isEmpty()){
+//            Raspuns raspuns;
+//            Intrebare currentInt = intrebariList.get(0);
+//            String raspunsCorect = currentInt.getRaspunsCorect();
+//            if(v1RadioBtn.isSelected())
+//            {
+//                if(v1RadioBtn.getText().equals(raspunsCorect))
+//                {
+//                    raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), this.studentName, currentIntrebare.getPunctaj());
+//                    serviceProfesor.addRaspuns(raspuns);
+//                }
+//            }
+//            else if(v2RadioBtn.isSelected()){
+//                if(v2RadioBtn.getText().equals(raspunsCorect))
+//                {
+//                    raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), this.studentName, currentIntrebare.getPunctaj());
+//                    serviceProfesor.addRaspuns(raspuns);
+//                }
+//            }
+//
+//            else if(v3RadioBtn.isSelected()){
+//                if(v3RadioBtn.getText().equals(raspunsCorect))
+//                {
+//                    raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), this.studentName, currentIntrebare.getPunctaj());
+//                    serviceProfesor.addRaspuns(raspuns);
+//                }
+//            }
+//            else{
+//                raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), this.studentName, 0);
+//                serviceProfesor.addRaspuns(raspuns);
+//            }
+//
+//        }
+//
+//        aRaspuns = 0;
+//        Intrebare intrebare = intrebareEvent.getData();
+//        List<Intrebare> intrebareList = new ArrayList<>();
+//        intrebareList.add(intrebare);
+//        currentIntrebare = intrebare;
+//        if(!intrebariList.isEmpty())
+//            intrebariList.remove(0);
+//        intrebariList.setAll(intrebareList);
+//
+//        setTable();
+//
+//        trimiteRaspunsBtn.setVisible(true);
+//        v1RadioBtn.setVisible(true);
+//        v2RadioBtn.setVisible(true);
+//        v3RadioBtn.setVisible(true);
+//
+//        v1RadioBtn.setText(intrebare.getV1());
+//        v2RadioBtn.setText(intrebare.getV2());
+//        v3RadioBtn.setText(intrebare.getV3());
+//
+//    }
+
+    private class IntrebareObserver implements Observer<IntrebareEvent>{
+        @Override
+        public void update(IntrebareEvent intrebareEvent) {
+            finalScoreLabel.setVisible(false);
+            if(!intrebariList.isEmpty()){
+                Raspuns raspuns;
+                Intrebare currentInt = intrebariList.get(0);
+                String raspunsCorect = currentInt.getRaspunsCorect();
+                if(v1RadioBtn.isSelected())
+                {
+                    if(v1RadioBtn.getText().equals(raspunsCorect))
+                    {
+                        raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), studentName, currentIntrebare.getPunctaj());
+                        serviceProfesor.addRaspuns(raspuns);
+                    }
+                }
+                else if(v2RadioBtn.isSelected()){
+                    if(v2RadioBtn.getText().equals(raspunsCorect))
+                    {
+                        raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), studentName, currentIntrebare.getPunctaj());
+                        serviceProfesor.addRaspuns(raspuns);
+                    }
+                }
+
+                else if(v3RadioBtn.isSelected()){
+                    if(v3RadioBtn.getText().equals(raspunsCorect))
+                    {
+                        raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), studentName, currentIntrebare.getPunctaj());
+                        serviceProfesor.addRaspuns(raspuns);
+                    }
+                }
+                else{
+                    raspuns = new Raspuns(currentIntrebare.getNrIntrebare(), studentName, 0);
+                    serviceProfesor.addRaspuns(raspuns);
+                }
+
+            }
+
+            aRaspuns = 0;
+            Intrebare intrebare = intrebareEvent.getData();
+            List<Intrebare> intrebareList = new ArrayList<>();
+            intrebareList.add(intrebare);
+            currentIntrebare = intrebare;
+            if(!intrebariList.isEmpty())
+                intrebariList.remove(0);
+            intrebariList.setAll(intrebareList);
+
+            setTable();
+
+            trimiteRaspunsBtn.setVisible(true);
+            v1RadioBtn.setVisible(true);
+            v2RadioBtn.setVisible(true);
+            v3RadioBtn.setVisible(true);
+            finalScoreLabel.setVisible(false);
+
+            v1RadioBtn.setText(intrebare.getV1());
+            v2RadioBtn.setText(intrebare.getV2());
+            v3RadioBtn.setText(intrebare.getV3());
+        }
+    }
+
+    private class FinishObserver implements Observer<FinishEvent>{
+
+        @Override
+        public void update(FinishEvent finishEvent) {
+            trimiteRaspunsBtn.setVisible(false);
+            v1RadioBtn.setVisible(false);
+            v2RadioBtn.setVisible(false);
+            v3RadioBtn.setVisible(false);
+            finalScoreLabel.setVisible(true);
+            Final rezultatFinal = finishEvent.getData();
+            if (rezultatFinal.getNumeStudent().equals(studentName)){
+                finalScoreLabel.setText("Final grade: " + Integer.toString(rezultatFinal.getPunctajObtinut()) + "/" + Integer.toString(rezultatFinal.getPunctajMaxim()));
+            };
+
+        }
+    }
+
+    @SuppressWarnings("unchecked")
     @Override
-    public void update(IntrebareEvent intrebareEvent) {
-        aRaspuns = 0;
-        Intrebare intrebare = intrebareEvent.getData();
-        List<Intrebare> intrebareList = new ArrayList<>();
-        intrebareList.add(intrebare);
-        currentIntrebare = intrebare;
-        if(!intrebariList.isEmpty())
-            intrebariList.remove(0);
-        intrebariList.setAll(intrebareList);
-
-        setTable();
-
-        v1RadioBtn.setText(intrebare.getV1());
-        v2RadioBtn.setText(intrebare.getV2());
-        v3RadioBtn.setText(intrebare.getV3());
-
+    public void update(Event event) {
+        if(listeners.containsKey(event.getClass())){
+            listeners.get(event.getClass()).update(event);
+        }
+        else{
+            throw new IllegalArgumentException("Event not supported");
+        }
     }
 }

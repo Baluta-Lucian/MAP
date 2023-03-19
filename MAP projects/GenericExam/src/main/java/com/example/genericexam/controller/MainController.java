@@ -1,7 +1,6 @@
 package com.example.genericexam.controller;
 
 import com.example.genericexam.Main;
-import com.example.genericexam.service.Service;
 import com.example.genericexam.service.ServiceProfesor;
 import com.example.genericexam.service.ServiceStudent;
 import javafx.event.ActionEvent;
@@ -16,6 +15,7 @@ import java.io.IOException;
 public class MainController {
     ServiceStudent serviceStudent;
     ServiceProfesor serviceProfesor;
+
 
     String s1;
     String s2;
@@ -81,6 +81,7 @@ public class MainController {
         Stage stageP = new Stage();
         ProfesorController profesorController = fxmlLoaderP.getController();
         profesorController.setService(this.serviceStudent, this.serviceProfesor);
+        profesorController.setStudenti(this.s1, this.s2, this.s3);
 
         stageP.setTitle("Evaluator");
         stageP.setScene(sceneP);

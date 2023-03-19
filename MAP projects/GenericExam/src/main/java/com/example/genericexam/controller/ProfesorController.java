@@ -1,8 +1,8 @@
 package com.example.genericexam.controller;
 
+import com.example.genericexam.domain.Final;
 import com.example.genericexam.domain.Intrebare;
 import com.example.genericexam.domain.Raspuns;
-import com.example.genericexam.service.Service;
 import com.example.genericexam.service.ServiceProfesor;
 import com.example.genericexam.service.ServiceStudent;
 import com.example.genericexam.utils.events.IntrebareEvent;
@@ -30,6 +30,10 @@ public class ProfesorController implements Observer<RaspunsEvent> {
     String s2;
     String s3;
 
+    private int s1Pct = 0;
+    private int s2Pct = 0;
+    private int s3Pct = 0;
+
     int i = 1;
 
     @FXML
@@ -43,6 +47,9 @@ public class ProfesorController implements Observer<RaspunsEvent> {
 
     @FXML
     private TableColumn<Intrebare, Integer> testPunctajColumn;
+
+    @FXML
+    private Button finishTestBtn;
 
     @FXML
     private TableColumn<Intrebare, String> testRaspunsColumn;
@@ -108,12 +115,18 @@ public class ProfesorController implements Observer<RaspunsEvent> {
 
     List<Intrebare> intrebariDate = new ArrayList<>();
 
-    int currentPctMax = 0;
+    private int currentPctMax = 0;
     public void setService(ServiceStudent serviceStudent, ServiceProfesor serviceProfesor){
         this.serviceStudent = serviceStudent;
         this.serviceProfesor = serviceProfesor;
         this.serviceProfesor.addObserver(this);
         initModule();
+    }
+
+    public void setStudenti(String s1, String s2, String s3){
+        this.s1 = s1;
+        this.s2 = s2;
+        this.s3 = s3;
     }
 
     public void onPlaseazaIntrebareBtnPress(ActionEvent event){
@@ -152,6 +165,25 @@ public class ProfesorController implements Observer<RaspunsEvent> {
         raspunsTableView.setItems(raspunsuriList);
     }
 
+    public void onFinishTestBtnPress(ActionEvent event){
+        raspunsuriList.clear();
+        setRaspunsTable();
+        Final s1Final = new Final(this.s1, this.s1Pct, this.currentPctMax);
+        Final s2Final = new Final(this.s2, this.s2Pct, this.currentPctMax);
+        Final s3Final = new Final(this.s3, this.s3Pct, this.currentPctMax);
+
+        this.s1Pct = 0;
+        this.s2Pct = 0;
+        this.s3Pct = 0;
+
+        serviceStudent.addFinal(s1Final);
+        serviceStudent.addFinal(s2Final);
+        serviceStudent.addFinal(s3Final);
+
+        this.currentPctMax = 0;
+
+    }
+
     public void setTableTest(){
         testNrIntrebareColumn.setCellValueFactory(new PropertyValueFactory<Intrebare, Integer>("nrIntrebare"));
         testDescriereColumn.setCellValueFactory(new PropertyValueFactory<Intrebare, String>("descriere"));
@@ -174,8 +206,11 @@ public class ProfesorController implements Observer<RaspunsEvent> {
         setTable();
 
         plaseazaIntrebareBtn.setOnAction(this::onPlaseazaIntrebareBtnPress);
+        finishTestBtn.setOnAction(this::onFinishTestBtnPress);
 
     }
+
+
 
 
     @Override
@@ -183,6 +218,16 @@ public class ProfesorController implements Observer<RaspunsEvent> {
         System.out.println(raspunsEvent.getData());
 
         raspunsuri = serviceProfesor.getAllRaspunsuri();
+        Raspuns ultimulRaspuns = raspunsuri.get(raspunsuri.size()-1);
+        if(ultimulRaspuns.getNumeStud().equals(this.s1)){
+            this.s1Pct += ultimulRaspuns.getPunctaj();
+        }
+        if(ultimulRaspuns.getNumeStud().equals(this.s2)){
+            this.s2Pct += ultimulRaspuns.getPunctaj();
+        }
+        if(ultimulRaspuns.getNumeStud().equals(this.s3)){
+            this.s3Pct += ultimulRaspuns.getPunctaj();
+        }
         raspunsuriList.setAll(raspunsuri);
 
         setRaspunsTable();
