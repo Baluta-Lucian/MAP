@@ -7,8 +7,7 @@ public class Organizator implements Identifiable<Integer>{
     private String username;
     private String password;
 
-    public Organizator(Integer id, String username, String password) {
-        this.id = id;
+    public Organizator(String username, String password) {
         this.username = username;
         this.password = password;
     }

@@ -3,22 +3,20 @@ package org.example.domain;
 import java.util.Objects;
 
 public class Participant implements Identifiable<Integer>{
-    // id, nume, cm3, team(poate fii null)
+    // id, nume, capacitate, team(poate fii null)
     private int id;
     String nume;
-    Integer cm3;
+    cm3 capacitate;
     String team;
 
-    public Participant(int id, String nume, Integer cm3, String team) {
-        this.id = id;
+    public Participant(String nume, cm3 capacitate, String team) {
         this.nume = nume;
-        this.cm3 = cm3;
+        this.capacitate = capacitate;
         this.team = team;
     }
-    public Participant(int id, String nume, Integer cm3) {
-        this.id = id;
+    public Participant(String nume, cm3 capacitate) {
         this.nume = nume;
-        this.cm3 = cm3;
+        this.capacitate = capacitate;
         this.team = "";
     }
 
@@ -30,12 +28,16 @@ public class Participant implements Identifiable<Integer>{
         this.nume = nume;
     }
 
-    public Integer getCm3() {
-        return cm3;
+    public String getCapacitate() {
+        return String.valueOf(this.capacitate);
     }
 
-    public void setCm3(Integer cm3) {
-        this.cm3 = cm3;
+    public cm3 getCapacitateCm3(){
+        return this.capacitate;
+    }
+
+    public void setCapacitate(cm3 capacitate) {
+        this.capacitate = capacitate;
     }
 
     public String getTeam() {
@@ -60,7 +62,7 @@ public class Participant implements Identifiable<Integer>{
     public String toString() {
         return "Participant{" +
                 "nume='" + nume + '\'' +
-                ", cm3=" + cm3 +
+                ", cm3=" + capacitate.label +
                 ", team='" + team + '\'' +
                 '}';
     }
@@ -70,11 +72,11 @@ public class Participant implements Identifiable<Integer>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Participant that = (Participant) o;
-        return id == that.id && Objects.equals(nume, that.nume) && Objects.equals(cm3, that.cm3) && Objects.equals(team, that.team);
+        return id == that.id && Objects.equals(nume, that.nume) && Objects.equals(capacitate, that.capacitate) && Objects.equals(team, that.team);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nume, cm3, team);
+        return Objects.hash(id, nume, capacitate, team);
     }
 }

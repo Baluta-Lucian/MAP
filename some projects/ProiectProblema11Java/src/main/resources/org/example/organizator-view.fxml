@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.OrganizatorController">
+   <children>
+      <TableView fx:id="curseTableView" layoutX="11.0" layoutY="14.0" prefHeight="133.0" prefWidth="359.0">
+        <columns>
+          <TableColumn fx:id="cm3CursaColumn" prefWidth="179.0" text="cm3 cursa" />
+          <TableColumn fx:id="participantiColumn" prefWidth="179.0" text="participanti" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchTeamTextField" layoutX="64.0" layoutY="188.0" promptText="cauta dupa echipa.." />
+      <Button fx:id="searchTeamBtn" layoutX="236.0" layoutY="188.0" mnemonicParsing="false" text="Search" />
+      <TableView fx:id="teamTableView" layoutX="11.0" layoutY="225.0" prefHeight="163.0" prefWidth="367.0">
+        <columns>
+          <TableColumn fx:id="numeColumn" prefWidth="185.0" text="nume" />
+          <TableColumn fx:id="capacitateColumn" prefWidth="181.0" text="capacitate" />
+        </columns>
+      </TableView>
+      <Label layoutX="440.0" layoutY="96.0" text="Inscriere Participant">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="397.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ComboBox fx:id="capacitateComboBox" layoutX="25.0" layoutY="24.0" prefWidth="150.0" promptText="Capacitate.." />
+            <TextField fx:id="numeInscriereTextField" layoutX="26.0" layoutY="75.0" promptText="Nume.." />
+            <TextField fx:id="echipaInscriereTextField" layoutX="26.0" layoutY="126.0" promptText="Echipa.." />
+            <Button fx:id="inscriereBtn" layoutX="75.0" layoutY="161.0" mnemonicParsing="false" text="Inscrie" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

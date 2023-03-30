@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="32221fe7-a26d-4deb-bd28-fd42474fa10d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/ComputerRequests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/RepairShop.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/RepairShopDB.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/RepairedForms.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/bd.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/MainFX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/MainFXSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/RepairShopConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/controller/ComputerRepairShopController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/model/ComputerRepairRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/model/ComputerRepairedForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/model/Identifiable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/model/RequestStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/ComputerRepairRequestRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/ComputerRepairedFormRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/RepositoryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/file/ComputerRepairRequestFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/file/ComputerRepairedFormFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/jdbc/ComputerRepairRequestJdbcRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/jdbc/ComputerRepairedFormJdbcRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/jdbc/JdbcUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/mock/AbstractRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/mock/ComputerRepairRequestInMemoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/repository/mock/ComputerRepairedFormInMemoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/services/ComputerRepairServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/java/com/example/lab4mpp/services/ServicesException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/resources/com/example/lab4mpp/RepairShopConfig.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/resources/com/example/lab4mpp/RepairShopWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/resources/com/example/lab4mpp/bd.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/Lab4MPP/src/main/resources/com/example/lab4mpp/log4j2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/bd.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/JdbcUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/controller/OrganizatorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/domain/Cursa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/domain/TableParticipantHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/domain/cm3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/repository/CursaDbRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/repository/OrganizatorDbRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/repository/ParticipantDbRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/service/ServiceOrganizator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/service/ServiceParticipant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/resources/org/example/login-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/resources/org/example/organizator-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/controller/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/controller/ProfesorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/controller/StudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/domain/Final.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/domain/Intrebare.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/domain/Raspuns.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/repository/RepositoryDbIntrebari.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/service/ServiceProfesor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/service/ServiceStudent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/utils/events/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/utils/events/FinishEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/utils/events/IntrebareEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/utils/events/RaspunsEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/utils/observer/Observable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/genericexam/utils/observer/Observer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/genericexam/main-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/genericexam/profesor-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/genericexam/student-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/Enunt" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/Enunt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/domain/Organizator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/domain/Organizator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/domain/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/domain/Participant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/repository/ParticipantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/repository/ParticipantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../some projects/ProiectProblema11Java/src/main/java/org/example/repository/Repository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Lzu5onq9XGIeviUZvjKmGPfxoK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/balut/Downloads/photoshop try/for learning(apps,etc)/ANUL II/SEM I/MAP/MAP projects/GridExam"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.genericexam.Main" />
+      <module name="GenericExam.main" />
+      <option name="PROGRAM_PARAMETERS" value="student1 student2 student3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32221fe7-a26d-4deb-bd28-fd42474fa10d" name="Changes" comment="" />
+      <created>1676886053333</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676886053333</updated>
+      <workItem from="1676886054974" duration="804000" />
+      <workItem from="1676894434007" duration="55000" />
+      <workItem from="1676894498797" duration="9701000" />
+      <workItem from="1679223718378" duration="46000" />
+      <workItem from="1679230038347" duration="9791000" />
+      <workItem from="1679655528444" duration="303000" />
+      <workItem from="1679775421552" duration="8668000" />
+      <workItem from="1679922475490" duration="107000" />
+      <workItem from="1680185313347" duration="1035000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
